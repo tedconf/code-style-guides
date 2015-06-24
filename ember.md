@@ -100,7 +100,7 @@ init](http://reefpoints.dockyard.com/2014/04/28/dont-override-init.html).
 ### Use Pods structure
 
 Store local components within their pod, global components in the
-`components` structure
+`components` structure. Use a `lib` folder for route-level components.
 
 ```
 app
@@ -109,15 +109,16 @@ app
     route.js
   blog/
     index/
-      blog-listing/ - component only used on the index template
-        template.hbs
+      lib/
+        blog-listing/ - component only used on the index template
+          template.hbs
       route.js
       template.hbs
+    lib
+      comment-details/ - used within blog templats
+        component.js
+        template.hbs
     route.js
-    comment-details/ - used within blog templats
-      component.js
-      template.hbs
-
   components/
     tag-listing/ - used throughout the app
       template.hbs
