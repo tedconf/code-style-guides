@@ -175,7 +175,10 @@ Use block syntax instead of `in` syntax with block helpers
 
 ### Use components in `{{#each}}` blocks
 
-If the contents of your each blocks get complex (~8+ lines), use components. This will allow you to test the contents in isolation via unit tests, as your loop will likely contain more complex logic in this case.
+Contents of your each blocks should be a single line, use components
+when more than one line is needed. This will allow you to test the
+contents in isolation via unit tests, as your loop will likely contain
+more complex logic in this case.
 
 ```hbs
 {{! Good }}
@@ -189,7 +192,6 @@ If the contents of your each blocks get complex (~8+ lines), use components. Thi
     <img src={{post.image}} />
     <h1>{{post.title}}</h2>
     <p>{{post.summar}}</p>
-    ...
   </article>
 {{/each}}
 ```
