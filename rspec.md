@@ -2,4 +2,4 @@
 
 See: http://betterspecs.org/
 
-Conribute: https://github.com/andreareginato/betterspecs
+Contribute: https://github.com/andreareginato/betterspecs
