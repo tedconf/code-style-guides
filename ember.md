@@ -129,6 +129,30 @@ app
     serializer.js
 ```
 
+## Computed properties
+
+### Computed properties
+
+No computed property should be more than six lines of code. Break large
+CPs into multiple properties that can be combined with additional CPs or
+CPMs.
+
+```javascript
+// needs example
+```
+
+### Boolean computed 
+
+Boolean computed properties should start with "is" or "has".
+
+```javascript
+// googd
+isShowingNavBar: Ember.computed.bool('currentUser')
+
+//bad
+showNavBar: Ember.computed.bool('currentUser')
+```
+
 ## Controllers
 
 ### Define query params first
