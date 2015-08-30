@@ -9,6 +9,7 @@
 - [Templates](#templates)
 - [Routes](#routes)
 - [Ember Data](#ember-data)
+- [Testing](#testing)
 
 ## General
 
@@ -267,6 +268,39 @@ export default Model.extend({
 
 Group attributes, relations, then computed properties. Organize each
 subgroup alphabetically.
+
+## Testing
+
+To share code between setup blocks and tests, use `this.[your-prop]`. This is so QUnit can manage the lifecycle of your variables, and to prevent memory leaks from free variables. It is also how the [QUnit docs](http://api.qunitjs.com/QUnit.module/) do it.
+
+```javascript
+// good
+module('my test', {
+  beforeEach: function() {
+    this.users = [
+      {id: 1, name: 'Link'}
+    ];
+    this.subject.foo(this.users);
+  }
+});
+
+test('link is here', function(assert) {
+  assert.equal(this.users[0].name, 'Link');
+});
+
+// bad
+let users = [
+  {id: 1, name: 'Link'}
+];
+module('my test', {
+  this.subject.foo(users);
+});
+
+test('link is here', function(assert) {
+  assert.equal(users[0].name, 'Link');
+});
+```
+
 
 ---
 
