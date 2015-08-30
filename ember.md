@@ -2,13 +2,13 @@
 
 ## Table Of Contents
 
-## [General](#general)
-## Organizing your modules
-## Computed properties
-Controllers
-Templates
-Routes
-Ember Data
+- [General](#general)
+- Organizing your modules
+- Computed properties
+- Controllers
+- Templates
+- Routes
+- Ember Data
 
 ## [General](#general)
 
