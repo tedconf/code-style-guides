@@ -3,14 +3,14 @@
 ## Table Of Contents
 
 - [General](#general)
-- Organizing your modules
-- Computed properties
-- Controllers
-- Templates
-- Routes
-- Ember Data
+- [Organizing your modules](#organizing-your-modules)
+- [Computed properties](#computed-properties)
+- [Controllers](#controllers)
+- [Templates](#templates)
+- [Routes](#routes)
+- [Ember Data](#ember-data)
 
-## [General](#general)
+## General
 
 ### Create local version of Ember.\* and DS.\*
 
