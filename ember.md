@@ -1,10 +1,16 @@
-Forked from DockYard: https://github.com/dockyard/styleguides
-
 # Ember.js Style Guide
 
 ## Table Of Contents
 
 ## General
+## Organizing your modules
+## Computed properties
+Controllers
+Templates
+Routes
+Ember Data
+
+## [General](#general)
 
 ### Create local version of Ember.\* and DS.\*
 
@@ -261,3 +267,7 @@ export default Model.extend({
 
 Group attributes, relations, then computed properties. Organize each
 subgroup alphabetically.
+
+---
+
+This guide was originally forked from DockYard: https://github.com/dockyard/styleguides
