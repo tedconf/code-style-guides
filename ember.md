@@ -2,7 +2,7 @@
 
 ## Table Of Contents
 
-## General
+## [General](#general)
 ## Organizing your modules
 ## Computed properties
 Controllers
