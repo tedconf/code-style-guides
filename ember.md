@@ -1,5 +1,7 @@
 # Ember.js Style Guide
 
+Originally forked from [DockYard's styleguide](https://github.com/dockyard/styleguides)
+
 ## Table Of Contents
 
 - [General](#general)
@@ -304,4 +306,3 @@ test('link is here', function(assert) {
 
 ---
 
-This guide was originally forked from DockYard: https://github.com/dockyard/styleguides
