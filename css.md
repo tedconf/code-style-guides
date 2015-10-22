@@ -49,6 +49,19 @@ used in CSS and applied in HTML:
 </figure>
 ```
 
+## Utility Classes
+
+Though it's best to stick with BEM in most cases to avoid style conflicts, gloabal utilty classes can be helpful for small bits of style that will be used repeatedly.
+
+* Utility classes always start with a lowercase letter (to distinguish them from BEM classes).
+* Use caution when editing utility classes. They are not scoped like BEM classes and will affect the whole app.
+
+```css
+.capitalize {
+  text-transform: uppercase;
+}
+```
+
 ## Sources
 
 The guidelines found in this document were adapted from the following sources:
