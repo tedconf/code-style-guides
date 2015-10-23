@@ -1,0 +1,18 @@
+{{#ted-page-header
+  subheading='TED'
+  slim-heading='Code'
+  strong-heading='Styleguides'
+  byline="Our best practices for building on the web"}}
+
+  <div class="Application__links">
+    {{link-to 'Home' 'index' class='Application__link'}}
+    {{link-to 'Ember' 'ember' class='Application__link'}}
+    {{link-to 'CSS' 'css' class='Application__link'}}
+    {{link-to 'Ruby' 'ruby' class='Application__link'}}
+  </div>
+
+{{/ted-page-header}}
+
+<div class="container u-margin-top-lg">
+  {{outlet}}
+</div>

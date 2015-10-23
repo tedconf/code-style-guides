@@ -1,0 +1,20 @@
+.Application {
+  &__links {
+    margin-top: 50px;
+  }
+  &__link {
+    color: white;
+    opacity: 0.7;
+    font-size: 24px;
+    font-weight: normal;
+    margin-right: 45px;
+    transition: opacity 0.15s;
+
+    &:hover,
+    &.active {
+      opacity: 1;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}

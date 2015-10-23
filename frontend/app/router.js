@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('ember');
+  this.route('css');
+  this.route('ruby');
 });
 
 export default Router;
