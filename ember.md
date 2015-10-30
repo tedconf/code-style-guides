@@ -303,6 +303,11 @@ test('link is here', function(assert) {
 });
 ```
 
+### Page objects
+
+Acceptance testing should use a page object. This forces you to describe your tests in words and phrases instead of CSS selectors.
+
+* https://www.npmjs.com/package/ember-page-object
 
 ---
 
