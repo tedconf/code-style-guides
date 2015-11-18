@@ -5,8 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'code-style-guides',
     podModulePrefix: 'code-style-guides/pods',
     environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
+    baseURL: '/code-style-guides',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -41,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/code-style-guides';
   }
 
   return ENV;
