@@ -1,0 +1,24 @@
+$red: #C8325E;
+
+.Navigation {
+  &__item {
+    display: block;
+    font-size: 16px;
+    padding: 6px 0 6px 11px;
+    color: #888;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+
+    &:hover {
+      text-decoration: none;
+      color: $red;
+    }
+
+    &.active {
+      text-decoration: none;
+      border-color: $red;
+      color: $red;
+      font-weight: bold;
+    }
+  }
+}
