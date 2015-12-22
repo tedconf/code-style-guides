@@ -161,4 +161,3 @@ There's a separate guide on this.
 ### Deleting a model
 
 ### Adding clientside validations
-
