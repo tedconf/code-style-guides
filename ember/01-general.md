@@ -1,19 +1,4 @@
-# Ember.js Style Guide
-
-Originally forked from [DockYard's styleguide](https://github.com/dockyard/styleguides)
-
-## Table Of Contents
-
-- [General](#general)
-- [Organizing your modules](#organizing-your-modules)
-- [Computed properties](#computed-properties)
-- [Controllers](#controllers)
-- [Templates](#templates)
-- [Routes](#routes)
-- [Ember Data](#ember-data)
-- [Testing](#testing)
-
-## General
+# General
 
 ### Create local version of Ember.\* and DS.\*
 
@@ -311,3 +296,4 @@ Acceptance testing should use a page object. This forces you to describe your te
 
 ---
 
+Originally forked from [DockYard's styleguide](https://github.com/dockyard/styleguides)

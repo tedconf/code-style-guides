@@ -1,6 +1,4 @@
-# Cookbooks
-
-## Conventional forms
+# Forms
 
 Let's say you have a `talk` model. You make a `<talk-form>` component.
 
