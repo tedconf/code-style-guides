@@ -62,6 +62,62 @@ Though it's best to stick with BEM in most cases to avoid style conflicts, gloab
 }
 ```
 
+## Organize code by class, not breakpoint
+
+In general, organize your code by classes, and put media queries within those classes:
+
+```sass
+.Block {
+  padding: 10px;
+
+  @include respond-to(768px) {
+    padding: 20px;
+  }
+}
+```
+
+For dramatic layout changes, it may be more appropriate to organize styles primarily by breakpoint:
+
+```sass
+.Block {
+  padding: 10px;
+}
+
+.Block__element {
+  margin: 10px;
+}
+
+@include respond-to(768px) {
+  .Block {
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+
+  .Block__element {
+    visibility: hidden;
+  }
+}
+```
+
+Never use selectors inside a nested media query (e.g., never declare a class inside a media query inside a class):
+
+```sass
+
+.Block {
+  padding: 10px;
+
+  @include respond-to(768px) {
+    // don't do this!
+    .button {
+      padding: 20px;
+    }
+  }
+}
+```
+
+Be mindful that every media query costs ~30 bytes in the output: if you're using a lot of media queries, please refactor your Sass to the breakpoint-first style or layer on additional post-processing to consolidate media queries.
+
 ## Sources
 
 The guidelines found in this document were adapted from the following sources:
