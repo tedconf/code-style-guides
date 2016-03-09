@@ -21,9 +21,9 @@ The CSS class names we use look like this:
 * Block names always start with a capital letter.
 * Two underscores are used to adjoin an element.
 * Two hyphens are used to adjoin a modifier.
-* A single hyphen (spinal case) is used to separate multiple words
+* Camel case is used to separate multiple words
   within block, element, and modifier names.
-  e.g., `Block-name__element-name--modifier-name`
+  e.g., `Block-name__elementName--modifierName`
 * Elements may have their own modifiers.
   e.g., `Block__element--modifier`
 
