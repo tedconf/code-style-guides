@@ -43,7 +43,7 @@ AllCops:
 Metrics/AbcSize:
   Max: 40
 Metrics/MethodLength:
-  Max: 30
+  Max: 10
 
 
 
