@@ -49,9 +49,11 @@ Metrics/MethodLength:
 
 # Style/AlignParameters
 # "Align the parameters of a method call if they span more than one line."
-# Align with what?
 #
-# examples:
+# 'with_fixed_indentation' means subsequent lines of method arguments should
+# have 1 level of indentation from the method invocation.
+#
+# allowed examples:
 #
 #   server 'beapp-e01.private.ted.com',
 #     user: 'tedconf',
@@ -62,9 +64,8 @@ Metrics/MethodLength:
 #     forward_agent: true,
 #     proxy: Net::SSH::Proxy::Command.new('ssh gateway-e01.ted.com -p 55423 -W %h:%p')
 #
-# these are flagged by this cop, but i don't see what the problem is.
 Style/AlignParameters:
-  Enabled: false
+  EnforcedStyle: with_fixed_indentation
 
 
 
