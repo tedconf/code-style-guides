@@ -1,0 +1,144 @@
+# Common configuration for rubocop in TED projects.
+#
+# Usage:
+#
+#   in your project's .rubocop.yml:
+#
+#     inherit_from:
+#       - https://raw.githubusercontent.com/tedconf/code-style-guides/master/ruby/ted-rubocop.yml
+#       - .rubocop_todo.yml # if you have one
+#
+#   more on how the file is sourced & updated in
+#   https://github.com/bbatsov/rubocop#inheriting-configuration-from-a-remote-url
+#
+# Conventions in this file:
+#
+#   1. Make a branch & open a PR when you want to change something in here.
+#      Then the git history & closed PRs become documentation about how our
+#      styles have evolved over time.
+#   2. Keep configs in alphabetical order by cop name.
+#   3. Include comments explaining *why* a particular configuration is here.
+#      Hopefully we'll automate the building of a style guide from these
+#      someday, so write with that in mind.
+#   4. Use 3 blank links between blocks of configuration for readability.
+
+
+
+# don't check style on generated files.
+AllCops:
+  Exclude:
+    - 'tmp/**/*'
+    - 'db/schema.rb'
+
+
+
+# not sure if these should be global or not.
+# best-guess here for now.
+Metrics/AbcSize:
+  Max: 40
+Metrics/MethodLength:
+  Max: 30
+
+
+
+# Style/AlignParameters
+# "Align the parameters of a method call if they span more than one line."
+# Align with what?
+#
+# examples:
+#
+#   server 'beapp-e01.private.ted.com',
+#     user: 'tedconf',
+#     roles: %w(web app)
+#
+#   set :ssh_options,
+#     port: 55423, # rubocop:disable Style/NumericLiterals
+#     forward_agent: true,
+#     proxy: Net::SSH::Proxy::Command.new('ssh gateway-e01.ted.com -p 55423 -W %h:%p')
+#
+# these are flagged by this cop, but i don't see what the problem is.
+Style/AlignParameters:
+  Enabled: false
+
+
+
+# expect {
+#   a_thing
+# }.to raise_exception
+#
+# is fine.
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*
+
+
+
+# Style/ClosingParenthesisIndentation
+# "Align ) with ("
+#
+# example:
+#
+#   create(:talkstar_media,
+#     identifier: 'aaa',
+#     talkstar_media_provider_id: non_acme_provider_id
+#   )
+#
+# aligning ')' with '(' in cases like this end up creating unnecessarily long
+# lines, without improving readability all that much (if at all) IMO.
+Style/ClosingParenthesisIndentation:
+  Enabled: false
+
+
+
+# it's ok to do this when it makes the code feel less crowded.
+#
+# example:
+#
+#   class TalksController < ApplicationController
+#
+#     def show
+#       expires_in 10.seconds, public: true
+#       super
+#     end
+#
+#   end
+#
+# according to these cops, those empty lines after `class` and before the final
+# `end` shouldn't be there. they aren't always necessary, of course, but in
+# many cases they improve a person's ability to skim the code quickly.
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+Style/EmptyLinesAroundMethodBody:
+  Enabled: false
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+
+
+# "Style/Lambda: Use the lambda method for multi-line lambdas."
+#
+# multi-line lambdas using curly-brace syntax come up in a few places:
+#   - named scopes in models
+#   - config/deploy.rb, which relies heavily on lambdas
+#
+# example:
+#
+#   scope :whatever, -> {
+#     where(foo: 1)
+#   }
+#
+# this is perfectly readable, but is flagged by this cop.
+Style/Lambda:
+  Enabled: false
+
+
+
+# `unless` has always been a cognitive stumbling block for me (alex) & I
+# strongly prefer `! if`.
+#
+# maybe controversial? forgiveness > permission. I can see backing off on this
+# one depending on what the rest of y'all think.
+Style/NegatedIf:
+  Enabled: false
