@@ -1,34 +1,4 @@
-# Common configuration for rubocop in TED projects.
-#
-# Usage:
-#
-#   in your project's .rubocop.yml:
-#
-#     inherit_from:
-#       - https://raw.githubusercontent.com/tedconf/code-style-guides/master/ruby/ted-rubocop.yml
-#       - .rubocop_todo.yml # if you have one
-#
-#   more on how the file is sourced & updated in
-#   https://github.com/bbatsov/rubocop#inheriting-configuration-from-a-remote-url
-#
-#   NOTE: Support for sourcing config from URLs was added in rubocop 0.35.0
-#     In older versions you'll see 'No such file or directory @ rb_sysopen'
-#     errors when starting rubocop.
-#
-#     https://github.com/bbatsov/rubocop/releases/tag/v0.35.0
-#
-# Conventions in this file:
-#
-#   1. Make a branch & open a PR when you want to change something in here.
-#      Then the git history & closed PRs become documentation about how our
-#      styles have evolved over time.
-#   2. Keep configs in alphabetical order by cop name.
-#   3. Include comments explaining *why* a particular configuration is here.
-#      Hopefully we'll automate the building of a style guide from these
-#      someday, so write with that in mind.
-#   4. Use 3 blank links between blocks of configuration for readability.
-
-
+# Check README.md for usage & style conventions.
 
 # don't check style on generated files.
 AllCops:
