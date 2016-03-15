@@ -38,10 +38,10 @@ AllCops:
 
 
 
-# not sure if these should be global or not.
-# best-guess here for now.
+# codifying current rubocop defaults
+# establish our own baseline in case the project's defaults are changed
 Metrics/AbcSize:
-  Max: 40
+  Max: 15
 Metrics/MethodLength:
   Max: 10
 
