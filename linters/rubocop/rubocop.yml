@@ -41,12 +41,11 @@ Style/AlignParameters:
 
 # expect {
 #   a_thing
-# }.to raise_exception
+# }.to raise_error
 #
 # is fine.
 Style/BlockDelimiters:
-  Exclude:
-    - spec/**/*
+  EnforcedStyle: braces_for_chaining
 
 
 
