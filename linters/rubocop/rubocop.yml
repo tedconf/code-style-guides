@@ -10,10 +10,34 @@ AllCops:
 
 # codifying current rubocop defaults
 # establish our own baseline in case the project's defaults are changed
+#
+# flagging this as 'refactor'-level because they're so arbitrary
+# tempted to do the same for cyclomatic complexity, perceived complexity, etc.
+# will hold off on that for now, but PRs/discussion are welcome.
 Metrics/AbcSize:
-  Max: 15
+  Max: 25
+  Severity: refactor
+
+
+
+# writing long var names as a way of self-documenting shouldn't be discouraged
+# also allowing URLs & etc so as not to require artifically breaking apart
+# non-code strings. (this is current default already, but let's be explicit.)
+#
+# "It's like writing on a roll of toilet paper." - George Riley
+Metrics/LineLength:
+  Max: 100
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+
+
+
 Metrics/MethodLength:
   Max: 10
+  Severity: refactor
 
 
 
