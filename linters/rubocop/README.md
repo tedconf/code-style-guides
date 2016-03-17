@@ -12,7 +12,7 @@ in your project's .rubocop.yml:
 
 ```yml
 inherit_from:
-  - https://raw.githubusercontent.com/tedconf/code-style-guides/master/ruby/ted-rubocop.yml
+  - https://raw.githubusercontent.com/tedconf/code-style-guides/master/linters/rubocop/rubocop.yml
   - .rubocop_todo.yml # if you have one
 ```
 
