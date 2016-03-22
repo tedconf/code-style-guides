@@ -62,6 +62,28 @@ Though it's best to stick with BEM in most cases to avoid style conflicts, gloab
 }
 ```
 
+## "Mobile first" media query arrangements
+
+Base styles should be written for the smallest screens. Media queries should be used to introduce modified styles for progressively larger screens:
+
+```sass
+.Block {
+  padding: 10px;
+
+  @media all and (min-width: 600px) {
+    padding: 20px;
+  }
+
+  @media all and (min-width: 900px) {
+    padding: 40px;
+  }
+
+  @media all and (min-width: 1200px) {
+    padding: 60px;
+  }
+}
+```
+
 ## Organize code by class, not breakpoint
 
 In general, organize your code by classes, and put media queries within those classes:
