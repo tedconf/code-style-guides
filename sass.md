@@ -1,4 +1,4 @@
-# CSS guidelines
+# Sass guidelines
 
 ## BEM-like naming
 
