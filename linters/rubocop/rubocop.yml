@@ -5,7 +5,7 @@ AllCops:
   Exclude:
     - 'tmp/**/*'
     - 'db/schema.rb'
-
+    - 'bin/*'
 
 
 # codifying current rubocop defaults
