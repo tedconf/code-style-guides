@@ -85,6 +85,32 @@ Note: your build may fail if you don't have any component styles to import yet!
 
 ## 7. add TED styles and components
 
+`ember install ember-cli-ted-bootstrap` for base styles
+
+Add other TED components as needed. All are installable as Ember addons. 
+
+* [ember-ted-navs](https://github.com/tedconf/ember-ted-navs) for nav bars and nav menus
+* [ember-ted-session](https://github.com/tedconf/ember-ted-session) for auth
+* [ember-ted-modals](https://github.com/tedconf/ember-ted-modal)
+* [ember-ted-select](https://github.com/tedconf/ember-ted-select) for select menus
+* [ember-ted-gear](https://github.com/tedconf/ember-ted-gear) for settings menus
+
+Other vetted open source addons that we <3:
+
+* [ember-searchable-select](https://github.com/tedconf/ember-searchable-select) for fancy pants select menus
+* [ember-collapsible-panel](https://github.com/tedconf/ember-collapsible-panel) for accordion styles panels
+* [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers) for doing addiotional logic in ur HTMLbars
+
+## 9. setup a mock server for local dev and testing
+
+[ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) for stubbing out a mock server
+
+## 8. deployment setup
+
+
+
+
+
 
 
 
