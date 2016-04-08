@@ -109,7 +109,7 @@ expanding or accordion panels | [ember-collapsible-panel](https://github.com/ted
 
 Follow the install instructions and guides for [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) to set up a mock server. This is also helpful for stubbing out API endpoints locally before real API dev is complete.
 
-[TOOD: recommeneded page object addon? do we want to go with this one now? http://ember-cli-page-object.js.org/docs/v1.1.x/]
+Install [ember-cli-page-object](http://ember-cli-page-object.js.org/docs/v1.1.x/). Using page objects in your tets reduced duplication and improve legibility. 
 
 ## 9. deployment setup
 
