@@ -107,9 +107,9 @@ expanding or accordion panels | [ember-collapsible-panel](https://github.com/ted
 
 ## 8. setup your testing environment
 
-Follow the install instructions and guides for [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) to set up a mock server. This is also helpful for stubbing out API endpoints locally before real API dev is complete.
+Install [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) so your tests can use its mock server. This is also helpful for stubbing out API endpoints locally before real API dev is complete.
 
-Install [ember-cli-page-object](http://ember-cli-page-object.js.org/docs/v1.1.x/). Using page objects in your tets reduced duplication and improve legibility. 
+Install [ember-cli-page-object](http://ember-cli-page-object.js.org/docs/v1.1.x/). Using page objects in your tests reduces duplication and improves test readability. 
 
 ## 9. deployment setup
 
