@@ -88,25 +88,30 @@ Note: your build may fail if you don't have any component styles to import yet!
 
 `ember install ember-cli-ted-bootstrap` for base styles
 
-Add other TED components as needed. All are installable as Ember addons. 
+Add other TED components as needed. All are installable as Ember addons.
 
-* [ember-ted-navs](https://github.com/tedconf/ember-ted-navs) for nav bars and nav menus
-* [ember-ted-session](https://github.com/tedconf/ember-ted-session) for auth
-* [ember-ted-modals](https://github.com/tedconf/ember-ted-modal)
-* [ember-ted-select](https://github.com/tedconf/ember-ted-select) for select menus
-* [ember-ted-gear](https://github.com/tedconf/ember-ted-gear) for settings menus
+Most apps will need these:
 
-Other vetted open source addons that we <3:
+* TED style nav bars: [ember-ted-navs](https://github.com/tedconf/ember-ted-navs) 
+* TED auth: [ember-ted-session](https://github.com/tedconf/ember-ted-session) 
 
-* [ember-searchable-select](https://github.com/tedconf/ember-searchable-select) for fancy pants select menus
-* [ember-collapsible-panel](https://github.com/tedconf/ember-collapsible-panel) for accordion styles panels
-* [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers) for doing addiotional logic in ur HTMLbars
+Depending on the UX, you might also want to install these addons:
 
-## 9. setup a mock server for local dev and testing
+UX feature | addon solution 
+--- | --- 
+modal dialogs | [ember-ted-modals](https://github.com/tedconf/ember-ted-modal) 
+select elements | [ember-ted-select](https://github.com/tedconf/ember-ted-select) 
+settings drop-down menu | [emnber-ted-gear](https://github.com/tedconf/ember-ted-gear)
+fancy pants select menus | [ember-searchable-select](https://github.com/tedconf/ember-searchable-select)
+expanding or accordion panels | [ember-collapsible-panel](https://github.com/tedconf/ember-collapsible-panel)
 
-[ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) for stubbing out a mock server
+## 8. setup your testing environment
 
-## 8. deployment setup
+Follow the install instructions and guides for [ember-cli-mirage](https://github.com/samselikoff/ember-cli-mirage) to set up a mock server. This is also helpful for stubbing out API endpoints locally before real API dev is complete.
+
+[TOOD: recommeneded page object addon? do we want to go with this one now? http://ember-cli-page-object.js.org/docs/v1.1.x/]
+
+## 9. deployment setup
 
 For Ember apps that will be hosted by a rails app (this is most TED apps), use front_end_builds to manage deploys
 
@@ -138,6 +143,17 @@ If this is the first TED Ember app you've deployed, you'll need to set up an SSH
   ```
   
 You should now be able to deploy front-end code to staging with `ember deploy staging` and production with `ember deploy production`.
+
+## 10. other open source addons we <3
+
+These are all vetted by other TED Ember develoeprs and have been found to be helpful on previous TED Ember projects. Consider installng if the need arises!
+
+what you need? | addon solution
+--- | ---
+simple logic in HTMLbars | [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers)
+form validation | [ember-validations](https://github.com/DockYard/ember-validations)
+
+
 
 
 
