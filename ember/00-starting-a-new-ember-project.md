@@ -61,11 +61,15 @@ To keep your .scss files within the same directories as the components they styl
 * `npm install --save-dev samselikoff/ember-component-css#c81eae1333b057863cea0aea67495e588de7bf28`
 * `@import "pod-styles";` in `app/styles/app.scss`
 * you can now create `styles.scss` files within component directories and they'll be automatically compiled to app.css
-* style component sub-elements and states using [BEM style naming]  (https://github.com/tedconf/code-style-guides/blob/new-ember-app/sass.md#bem-like-naming) 
+* class and style your components with [TED conventional BEM style naming]  (https://github.com/tedconf/code-style-guides/blob/new-ember-app/sass.md#bem-like-naming) 
+
 
   ```
+  //app/pods/components/my-widget/component.js
+  classNames: 'My-widget"
+  
   //app/pods/components/my-widget/styles.scss
-  .my-widget {
+  .My-widget {
     // widget styles here
     
     &__element {
@@ -79,9 +83,6 @@ To keep your .scss files within the same directories as the components they styl
   ```
   
 Note: your build may fail if you don't have any component styles to import yet!
-  
-[TOOD: can we get component-css to capitalize the class name to be consistent with TED BEM style?]
-
 
 ## 7. add TED styles and components
 
