@@ -8,14 +8,12 @@ eg. Ember app that consume's `cool-project`'s API, should be called `cool-projec
 
 File all github issues on the parent repo (`cool-project`)'s issue tracker. You can reference them in your commits with `tedonf/cool-project#123`
 
-## 2. `ember init`
+## 2. `ember new`
 
 Update your local installation of `ember-cli` to the [latest version](https://github.com/ember-cli/ember-cli/releases) before doing this.
 
 ```
-mkdir cool-project-frontend
-cd cool-project-frontend
-ember init
+ember new cool-project-frontend
 ```
 
 ## 3. `git init`
@@ -64,10 +62,10 @@ To keep your .scss files within the same directories as the components they styl
 * class and style your components with [TED conventional BEM style naming]  (https://github.com/tedconf/code-style-guides/blob/new-ember-app/sass.md#bem-like-naming) 
 
 
-  ```
+  ```css
   //app/pods/components/my-widget/component.js
   classNames: 'My-widget"
-  
+
   //app/pods/components/my-widget/styles.scss
   .My-widget {
     // widget styles here
@@ -122,7 +120,7 @@ If this is the first TED Ember app you've deployed, you'll need to set up an SSH
 * for both prod and staging, create a new app in the dashboard with the same name as your project (i.e. `cool-project`) if it's not there already and add your FEB public key
 * in your Ember app, install [ember-cli-deploy-front-end-builds-pack] (https://github.com/tedconf/ember-cli-deploy-front-end-builds-pack),
 * configure your app name, staging, and prod urls in `config/deploy.js`
-  ```
+  ```js
   var app = 'cool-project';
   var stagingHost = 'https://cool-project.ted.com/';
   var productionHost = 'https://master.cool-project-staging.ted.com/';
@@ -130,7 +128,7 @@ If this is the first TED Ember app you've deployed, you'll need to set up an SSH
 
 * enable asset fingerprinting in `ember-cli-build.js`. Adjust the project name in the prepend string and file extensions as needed. 
 
-  ```
+  ```js
   var isProdOrStaging = (env === 'production') || (env === 'staging');
   
   var app = new EmberApp(defaults, {
