@@ -129,8 +129,8 @@ If this is the first TED Ember app you've deployed, you'll need to set up an SSH
 * enable asset fingerprinting in `ember-cli-build.js`. Adjust the project name in the prepend string and file extensions as needed. 
 
   ```js
+  var env = process.env.EMBER_ENV;
   var isProdOrStaging = (env === 'production') || (env === 'staging');
-  
   var app = new EmberApp(defaults, {
     fingerprint: {
       enabled: isProdOrStaging,
