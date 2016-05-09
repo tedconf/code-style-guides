@@ -16,6 +16,15 @@ inherit_from:
   - .rubocop_todo.yml # if you have one
 ```
 
+in your project's .gitignore:
+
+```
+.rubocop-http*
+```
+
+This is important because rubocop will fetch our style guide & cache it locally.
+(More info on that below.)
+
 The [rubocop README](https://github.com/bbatsov/rubocop#inheriting-configuration-from-a-remote-url)
 has more details on how the file is sourced & updated. Essentially, it will be
 downloaded to your machine & used. rubocop has some rules about updating the
