@@ -6,6 +6,7 @@ AllCops:
     - 'tmp/**/*'
     - 'db/schema.rb'
     - 'bin/*'
+    - 'spec/dummy/db/schema.rb'
 
 
 # codifying current rubocop defaults
