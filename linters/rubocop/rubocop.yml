@@ -7,7 +7,7 @@ AllCops:
     - 'db/schema.rb'
     - 'bin/*'
     - 'spec/dummy/db/schema.rb'
-
+    - 'spec/dummy/bin/*'
 
 # codifying current rubocop defaults
 # establish our own baseline in case the project's defaults are changed
