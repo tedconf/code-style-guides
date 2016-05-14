@@ -37,7 +37,7 @@ Metrics/LineLength:
 
 
 Metrics/MethodLength:
-  Max: 10
+  Max: 25
   Severity: refactor
 
 
