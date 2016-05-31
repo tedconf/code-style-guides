@@ -50,16 +50,14 @@ Follow the [Ember Suave](https://github.com/DockYard/ember-suave) installation i
 
 ## 6. enable scss & component-css
 
-`ember install ember-cli-sass`
+* `ember install ember-cli-sass`
+* `ember install ember-component-css`
 
 Rename `app/styles/app.css` to `app/styles/app.scss`
 
-To keep your .scss files within the same directories as the components they style, install `ember-component-css`:
+Follow the [ember-component-css](https://github.com/ebryn/ember-component-css) usage instructions, being sure to [**disable namespacing**](https://github.com/ebryn/ember-component-css#configuration).
 
-* `npm install --save-dev samselikoff/ember-component-css#c81eae1333b057863cea0aea67495e588de7bf28`
-* `@import "pod-styles";` in `app/styles/app.scss`
-* you can now create `styles.scss` files within component directories and they'll be automatically compiled to app.css
-* class and style your components with [TED conventional BEM style naming]  (https://github.com/tedconf/code-style-guides/blob/new-ember-app/sass.md#bem-like-naming) 
+Instead of using the default namespacing, class and style your components with [TED conventional BEM style naming]  (https://github.com/tedconf/code-style-guides/blob/new-ember-app/sass.md#bem-like-naming):
 
 
   ```css
