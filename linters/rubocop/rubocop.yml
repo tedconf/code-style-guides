@@ -8,6 +8,7 @@ AllCops:
     - 'bin/*'
     - 'spec/dummy/db/schema.rb'
     - 'spec/dummy/bin/*'
+    - 'app/models/protobuf/**/*'
 
 # codifying current rubocop defaults
 # establish our own baseline in case the project's defaults are changed
