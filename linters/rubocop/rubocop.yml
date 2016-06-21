@@ -92,6 +92,15 @@ Style/ClosingParenthesisIndentation:
 
 
 
+# comments explaining the purpose of a class are a good thing.
+# but they're unecessary for migration classes. the purpose of a migration
+# is obvious.
+Style/Documentation:
+  Exclude:
+    - 'db/migrate/*'
+
+
+
 # it's ok to do this when it makes the code feel less crowded.
 #
 # example:
