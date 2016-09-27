@@ -82,6 +82,8 @@ Note: your build may fail if you don't have any component styles to import yet!
 
 ## 7. add TED styles and components
 
+### a) classic style
+
 `ember install ember-cli-ted-bootstrap` for base styles
 
 Add other TED components as needed. All are installable as Ember addons.
@@ -100,6 +102,10 @@ select elements | [ember-ted-select](https://github.com/tedconf/ember-ted-select
 settings drop-down menu | [emnber-ted-gear](https://github.com/tedconf/ember-ted-gear)
 fancy pants select menus | [ember-searchable-select](https://github.com/tedconf/ember-searchable-select)
 expanding or accordion panels | [ember-collapsible-panel](https://github.com/tedconf/ember-collapsible-panel)
+
+### b) future style!
+
+For new projects, we'll be transitioning off of `ember-cli-ted-bootstrap` and moving towards using a functional css library and components. See [ember-ted-shed](http://tedconf.github.io/ember-ted-select/) for details on how to install in your project and get started with new functional CSS components. 
 
 ## 8. setup your testing environment
 
