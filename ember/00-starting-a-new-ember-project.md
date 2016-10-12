@@ -46,7 +46,9 @@ Delete the old directories we no longer need:
 
 ## 5. JS linting
 
-Follow the [Ember Suave](https://github.com/DockYard/ember-suave) installation instructions for JS style linting.
+We use ESLint with the [ember-suave plugin](https://github.com/DockYard/eslint-plugin-ember-suave), and some custom rules.  
+
+A sample Ember ESLint config with our custom rules is available [here](https://github.com/tedconf/code-style-guides/tree/master/linters/eslint/ember).
 
 ## 6. enable scss & component-css
 
