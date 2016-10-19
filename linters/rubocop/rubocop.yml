@@ -75,6 +75,22 @@ Style/BlockDelimiters:
 
 
 
+# yes:
+#   out = case subject
+#           when 1 then 'a'
+#           when 2 then 'b'
+#         end
+#
+# no:
+#   out = case subject
+#         when 1 then 'a'
+#         when 2 then 'b'
+#         end
+Style/CaseIndentation:
+  IndentOneStep: true
+
+
+
 # Style/ClosingParenthesisIndentation
 # "Align ) with ("
 #
