@@ -158,7 +158,10 @@ what you need? | addon solution
 --- | ---
 simple logic in HTMLbars | [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers)
 form validation | [ember-validations](https://github.com/DockYard/ember-validations)
-
+google (or other) analytics | [ember-metrics](https://github.com/poteto/ember-metrics)
+managing async code (saving, fetching, timers etc.) | [ember-concurrency](http://ember-concurrency.com/#/docs)
+bubbling actions | [ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper)
+buffering changes on a model | [ember-buffered-proxy](https://github.com/yapplabs/ember-buffered-proxy)
 
 
 
