@@ -8,3 +8,6 @@ namespace :lint do
 end
 
 task 'default' => 'lint:rubocop'
+
+# Glue task needed for jenkins-workflow-libs rubyBuild.
+task 'spec' => 'lint:rubocop'
