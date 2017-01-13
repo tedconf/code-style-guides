@@ -131,6 +131,18 @@ Style/EmptyLinesAroundModuleBody:
 
 
 
+# Either of these are ok
+#
+#   if foo
+#     bar
+#   end
+#
+#   bar if foo
+Style/IfUnlessModifier:
+  Enabled: false
+
+
+
 # "Style/Lambda: Use the lambda method for multi-line lambdas."
 #
 # multi-line lambdas using curly-brace syntax come up in a few places:
