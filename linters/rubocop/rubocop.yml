@@ -168,3 +168,15 @@ Style/Lambda:
 # one depending on what the rest of y'all think.
 Style/NegatedIf:
   Enabled: false
+
+
+
+# "string" vs 'string': there's no difference.
+# it's a waste of time to refactor the former into the latter
+#
+# requiring double-quotes only when variable interpolation is needed leads to
+# files with mixed single & double quotes, which doesn't even feel like
+# consistency of any kind. so if the enforced rule doesn't lead to consistent-
+# reading code, what's the point?
+Style/StringLiterals:
+  Enabled: false
