@@ -168,3 +168,16 @@ Style/Lambda:
 # one depending on what the rest of y'all think.
 Style/NegatedIf:
   Enabled: false
+
+
+
+# Having a lot of code in a block is probably not a great thing.  But in specs,
+# it's actually great, because spec frameworks like RSpec use blocks to define
+# scopes of specs. It seems like specs are not what this rule was aimed at.
+#
+#     RSpec.describe User do
+#       # All your specs go in here.
+#     end
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
