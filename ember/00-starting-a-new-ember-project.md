@@ -123,6 +123,8 @@ For Ember apps that will be hosted by a rails app (this is most TED apps), use f
 
 If this is the first TED Ember app you've deployed, you'll need to set up an SSH key for front_end_builds, get access keys and the bucket name for AWS, and set up an environment variables for all these before proceeding. Talk to a friendly [frontender](https://github.com/orgs/tedconf/teams/frontenders) to get set up. 
 
+Our standard s3 bucket for front-end apps is `ted-conferences-frontends`.
+
 * ensure the Rails app has [front_end_builds](https://github.com/tedconf/front_end_builds) setup
 * the dashboard is typically accessible from `https://cool-project.ted.com/frontends` and `https://master.cool-project-staging.ted.com/frontends` for prod and staging, respectively
 * for both prod and staging, create a new app in the dashboard with the same name as your project (i.e. `cool-project`) if it's not there already and add your FEB public key
