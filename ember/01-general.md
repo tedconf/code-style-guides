@@ -135,12 +135,12 @@ CPMs.
 // needs example
 ```
 
-### Boolean computed 
+### Boolean computed
 
 Boolean computed properties should start with "is" or "has".
 
 ```javascript
-// googd
+// good
 isShowingNavBar: Ember.computed.bool('currentUser')
 
 //bad
@@ -151,8 +151,8 @@ showNavBar: Ember.computed.bool('currentUser')
 
 ### Define query params first
 
-For consistancy and ease of discover, list your query params first in
-your contoller. These should be listed above default values.
+For consistency and ease of discover, list your query params first in
+your controller. These should be listed above default values.
 
 ### Do not use ObjectController or ArrayController
 
