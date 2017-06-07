@@ -43,7 +43,7 @@ Metrics/MethodLength:
 
 
 
-# Style/AlignParameters
+# Layout/AlignParameters
 # "Align the parameters of a method call if they span more than one line."
 #
 # 'with_fixed_indentation' means subsequent lines of method arguments should
@@ -60,7 +60,7 @@ Metrics/MethodLength:
 #     forward_agent: true,
 #     proxy: Net::SSH::Proxy::Command.new('ssh gateway-e01.ted.com -p 55423 -W %h:%p')
 #
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 
@@ -75,7 +75,7 @@ Style/BlockDelimiters:
 
 
 
-# Style/ClosingParenthesisIndentation
+# Layout/ClosingParenthesisIndentation
 # "Align ) with ("
 #
 # example:
@@ -87,7 +87,7 @@ Style/BlockDelimiters:
 #
 # aligning ')' with '(' in cases like this end up creating unnecessarily long
 # lines, without improving readability all that much (if at all) IMO.
-Style/ClosingParenthesisIndentation:
+Layout/ClosingParenthesisIndentation:
   Enabled: false
 
 
@@ -120,13 +120,13 @@ Style/Documentation:
 # according to these cops, those empty lines after `class` and before the final
 # `end` shouldn't be there. they aren't always necessary, of course, but in
 # many cases they improve a person's ability to skim the code quickly.
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundBlockBody:
   Enabled: false
-Style/EmptyLinesAroundClassBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
-Style/EmptyLinesAroundMethodBody:
+Layout/EmptyLinesAroundMethodBody:
   Enabled: false
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 
 
