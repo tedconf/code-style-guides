@@ -46,29 +46,6 @@ Metrics/MethodLength:
   Severity: refactor
 
 
-
-# Layout/AlignParameters
-# "Align the parameters of a method call if they span more than one line."
-#
-# 'with_fixed_indentation' means subsequent lines of method arguments should
-# have 1 level of indentation from the method invocation.
-#
-# allowed examples:
-#
-#   server 'beapp-e01.private.ted.com',
-#     user: 'tedconf',
-#     roles: %w(web app)
-#
-#   set :ssh_options,
-#     port: 55423, # rubocop:disable Style/NumericLiterals
-#     forward_agent: true,
-#     proxy: Net::SSH::Proxy::Command.new('ssh gateway-e01.ted.com -p 55423 -W %h:%p')
-#
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-
-
-
 # expect {
 #   a_thing
 # }.to raise_error
