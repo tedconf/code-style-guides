@@ -100,12 +100,20 @@ Style/AndOr:
 Style/BracesAroundHashParameters:
   Enabled: true
 
+# Indent private/protected/public as deep as method definitions
+Layout/AccessModifierIndentation:
+  Enabled: true
+
 # Align `when` with `case`.
 Layout/CaseIndentation:
   Enabled: true
 
 # Align comments with method definitions.
 Layout/CommentIndentation:
+  Enabled: true
+
+# Multi-line method chaining should be done with leading dots.
+Layout/DotPosition:
   Enabled: true
 
 Layout/EmptyLineAfterMagicComment:
@@ -208,3 +216,11 @@ Layout/TrailingWhitespace:
 # Use quotes for string literals when they are enough.
 Style/UnneededPercentQ:
   Enabled: true
+
+Style/StabbyLambdaParentheses:
+  Enabled: true
+  EnforcedStyle: require_parentheses
+
+Style/SignalException:
+  Enabled: true
+  EnforcedStyle: only_raise
