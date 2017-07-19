@@ -20,9 +20,9 @@ AllCops:
 # tempted to do the same for cyclomatic complexity, perceived complexity, etc.
 # will hold off on that for now, but PRs/discussion are welcome.
 Metrics/AbcSize:
+  Enabled: true
   Max: 25
   Severity: refactor
-
 
 
 # writing long var names as a way of self-documenting shouldn't be discouraged
@@ -31,6 +31,7 @@ Metrics/AbcSize:
 #
 # "It's like writing on a roll of toilet paper." - George Riley
 Metrics/LineLength:
+  Enabled: true
   Max: 100
   AllowHeredoc: true
   AllowURI: true
@@ -39,8 +40,8 @@ Metrics/LineLength:
     - https
 
 
-
 Metrics/MethodLength:
+  Enabled: true
   Max: 25
   Severity: refactor
 
@@ -101,6 +102,7 @@ Layout/ClosingParenthesisIndentation:
 #   - migration classes. the purpose of a migration is obvious.
 #   - classes in a dummy application.
 Style/Documentation:
+  Enabled: true
   Exclude:
     - 'db/migrate/*'
     - 'spec/dummy/**/*'
@@ -185,6 +187,7 @@ Style/NegatedIf:
 # Same goes for routes - those blocks can get pretty long.
 # Borrowed from https://github.com/NobodysNightmare/rubocop/commit/99124543155b728b495560ab9e2a88ff597e1899#diff-e93280b3b31a6438c533a5f3232340d8R1179
 Metrics/BlockLength:
+  Enabled: true
   ExcludedMethods:
     - context
     - describe
