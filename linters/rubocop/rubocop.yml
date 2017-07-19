@@ -52,6 +52,7 @@ Metrics/MethodLength:
 #
 # is fine.
 Style/BlockDelimiters:
+  Enabled: true
   EnforcedStyle: braces_for_chaining
 
 
