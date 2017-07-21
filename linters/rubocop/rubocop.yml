@@ -191,7 +191,7 @@ Layout/SpaceInsideParens:
 
 # Check quotes usage according to lint rule below.
 Style/StringLiterals:
-  Enabled: true
+  # Enabled: true # pending more consensus
 
 # Detect hard tabs, no hard tabs.
 Layout/Tab:
