@@ -114,7 +114,7 @@ Layout/CommentIndentation:
 
 # Multi-line method chaining should be done with leading dots.
 Layout/DotPosition:
-  Enabled: true
+  # Enabled: true # pending more consensus
 
 Layout/EmptyLineAfterMagicComment:
   Enabled: true
