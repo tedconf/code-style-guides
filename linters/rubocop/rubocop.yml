@@ -13,6 +13,20 @@ AllCops:
     - 'spec/dummy/bin/*'
     - 'app/models/protobuf/**/*'
 
+
+# DRY your Gemfile
+Bundler/DuplicatedGem:
+  Enabled: true
+
+
+# alphabetize your Gemfile.
+# if you like grouping them logically, a comment will be interpreted as the
+# beginning of a new list.
+Bundler/OrderedGems:
+  Enabled: true
+  TreatCommentsAsGroupSeparators: true
+
+
 # codifying current rubocop defaults
 # establish our own baseline in case the project's defaults are changed
 #
