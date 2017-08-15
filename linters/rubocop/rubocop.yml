@@ -43,7 +43,7 @@ Metrics/MethodLength:
 
 
 
-# Style/AlignParameters
+# Layout/AlignParameters
 # "Align the parameters of a method call if they span more than one line."
 #
 # 'with_fixed_indentation' means subsequent lines of method arguments should
@@ -60,7 +60,7 @@ Metrics/MethodLength:
 #     forward_agent: true,
 #     proxy: Net::SSH::Proxy::Command.new('ssh gateway-e01.ted.com -p 55423 -W %h:%p')
 #
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 
@@ -75,7 +75,7 @@ Style/BlockDelimiters:
 
 
 
-# Style/ClosingParenthesisIndentation
+# Layout/ClosingParenthesisIndentation
 # "Align ) with ("
 #
 # example:
@@ -87,7 +87,7 @@ Style/BlockDelimiters:
 #
 # aligning ')' with '(' in cases like this end up creating unnecessarily long
 # lines, without improving readability all that much (if at all) IMO.
-Style/ClosingParenthesisIndentation:
+Layout/ClosingParenthesisIndentation:
   Enabled: false
 
 
@@ -120,13 +120,25 @@ Style/Documentation:
 # according to these cops, those empty lines after `class` and before the final
 # `end` shouldn't be there. they aren't always necessary, of course, but in
 # many cases they improve a person's ability to skim the code quickly.
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundBlockBody:
   Enabled: false
-Style/EmptyLinesAroundClassBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
-Style/EmptyLinesAroundMethodBody:
+Layout/EmptyLinesAroundMethodBody:
   Enabled: false
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+
+
+# Either of these are ok
+#
+#   if foo
+#     bar
+#   end
+#
+#   bar if foo
+Style/IfUnlessModifier:
   Enabled: false
 
 
@@ -156,3 +168,25 @@ Style/Lambda:
 # one depending on what the rest of y'all think.
 Style/NegatedIf:
   Enabled: false
+
+
+
+# Having a lot of code in a block is probably not a great thing.  But in specs,
+# it's actually great, because spec frameworks like RSpec use blocks to define
+# scopes of specs. It seems like specs are not what this rule was aimed at.
+#
+#     RSpec.describe User do
+#       # All your specs go in here.
+#     end
+#
+# Same goes for routes - those blocks can get pretty long.
+# Borrowed from https://github.com/NobodysNightmare/rubocop/commit/99124543155b728b495560ab9e2a88ff597e1899#diff-e93280b3b31a6438c533a5f3232340d8R1179
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
+    - it
+    - shared_examples
+    - shared_examples_for
+    - namespace
+    - draw

@@ -135,12 +135,12 @@ CPMs.
 // needs example
 ```
 
-### Boolean computed 
+### Boolean computed
 
 Boolean computed properties should start with "is" or "has".
 
 ```javascript
-// googd
+// good
 isShowingNavBar: Ember.computed.bool('currentUser')
 
 //bad
@@ -151,8 +151,8 @@ showNavBar: Ember.computed.bool('currentUser')
 
 ### Define query params first
 
-For consistancy and ease of discover, list your query params first in
-your contoller. These should be listed above default values.
+For consistency and ease of discover, list your query params first in
+your controller. These should be listed above default values.
 
 ### Do not use ObjectController or ArrayController
 
@@ -292,7 +292,7 @@ test('link is here', function(assert) {
 
 Acceptance testing should use a page object. This forces you to describe your tests in words and phrases instead of CSS selectors.
 
-* https://www.npmjs.com/package/ember-page-object
+* http://ember-cli-page-object.js.org/
 
 ---
 
