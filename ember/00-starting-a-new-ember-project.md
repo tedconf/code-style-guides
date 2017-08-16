@@ -118,39 +118,7 @@ Install [ember-cli-page-object](http://ember-cli-page-object.js.org/docs/v1.1.x/
 
 ## 9. deployment setup
 
-For Ember apps that will be hosted by a rails app (this is most TED apps), use [`front_end_builds`](https://github.com/tedconf/front_end_builds) to manage deploys.
-
-If this is the first TED Ember app you've deployed, you'll need to set up an SSH key for front_end_builds, get access keys and the bucket name for AWS, and set up an environment variables for all these before proceeding. Talk to a friendly [frontender](https://github.com/orgs/tedconf/teams/frontenders) to get set up.
-
-Our standard s3 bucket for front-end apps is `ted-conferences-frontends`.
-
-* ensure the Rails app has [front_end_builds](https://github.com/tedconf/front_end_builds) setup
-* the dashboard is typically accessible from `https://cool-project.ted.com/frontends` and `https://master.cool-project-staging.ted.com/frontends` for prod and staging, respectively
-* for both prod and staging, create a new app in the dashboard with the same name as your project (i.e. `cool-project`) if it's not there already and add your FEB public key
-* in your Ember app, install [ember-cli-deploy-front-end-builds-pack] (https://github.com/tedconf/ember-cli-deploy-front-end-builds-pack),
-* configure your app name, staging, and prod urls in `config/deploy.js`
-
-  ```js
-  var app = 'cool-project';
-  var stagingHost = 'https://cool-project.ted.com/';
-  var productionHost = 'https://master.cool-project-staging.ted.com/';
-  ```
-
-* enable asset fingerprinting in `ember-cli-build.js`. Adjust the project name in the prepend string and file extensions as needed.
-
-  ```js
-  var env = process.env.EMBER_ENV;
-  var isProdOrStaging = (env === 'production') || (env === 'staging');
-  var app = new EmberApp(defaults, {
-    fingerprint: {
-      enabled: isProdOrStaging,
-      prepend: 'https://frontend-assets.tedcdn.com/cool-project/',
-      extensions: ['js', 'css', 'png', 'jpg', 'otf'],
-    }
-  });
-  ```
-
-You should now be able to deploy front-end code to staging with `ember deploy staging` and production with `ember deploy production`.
+See [deployment setup section](https://github.com/tedconf/code-style-guides/blob/master/ember/03-deployment-setup.md)
 
 ## 10. other open source addons we <3
 
