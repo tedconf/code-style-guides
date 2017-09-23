@@ -13,19 +13,18 @@ AllCops:
     - 'spec/dummy/bin/*'
     - 'app/models/protobuf/**/*'
 
-
 # DRY your Gemfile
 Bundler/DuplicatedGem:
   Enabled: true
-
+  Severity: warning
 
 # alphabetize your Gemfile.
 # if you like grouping them logically, a comment will be interpreted as the
 # beginning of a new list.
 Bundler/OrderedGems:
   Enabled: true
+  Severity: warning
   TreatCommentsAsGroupSeparators: true
-
 
 # codifying current rubocop defaults
 # establish our own baseline in case the project's defaults are changed
@@ -38,7 +37,6 @@ Metrics/AbcSize:
   Max: 25
   Severity: refactor
 
-
 # writing long var names as a way of self-documenting shouldn't be discouraged
 # also allowing URLs & etc so as not to require artifically breaking apart
 # non-code strings. (this is current default already, but let's be explicit.)
@@ -49,16 +47,15 @@ Metrics/LineLength:
   AllowURI: true
   Enabled: true
   Max: 100
+  Severity: warning
   URISchemes:
     - http
     - https
-
 
 Metrics/MethodLength:
   Enabled: true
   Max: 25
   Severity: refactor
-
 
 # expect {
 #   a_thing
@@ -68,7 +65,7 @@ Metrics/MethodLength:
 Style/BlockDelimiters:
   Enabled: true
   EnforcedStyle: braces_for_chaining
-
+  Severity: warning
 
 # comments explaining the purpose of a class are a good thing.
 # but they're unecessary in a few cases:
@@ -77,10 +74,10 @@ Style/BlockDelimiters:
 #   - classes in a dummy application.
 Style/Documentation:
   Enabled: true
+  Severity: warning
   Exclude:
     - 'db/migrate/*'
     - 'spec/dummy/**/*'
-
 
 # Having a lot of code in a block is probably not a great thing.  But in specs,
 # it's actually great, because spec frameworks like RSpec use blocks to define
@@ -94,6 +91,7 @@ Style/Documentation:
 # Borrowed from https://github.com/NobodysNightmare/rubocop/commit/99124543155b728b495560ab9e2a88ff597e1899#diff-e93280b3b31a6438c533a5f3232340d8R1179
 Metrics/BlockLength:
   Enabled: true
+  Severity: warning
   ExcludedMethods:
     - context
     - describe
@@ -108,125 +106,158 @@ Metrics/BlockLength:
 # Prefer &&/|| over and/or.
 Style/AndOr:
   Enabled: true
+  Severity: warning
 
 # Do not use braces for hash literals when they are the last argument of a
 # method call.
 Style/BracesAroundHashParameters:
   Enabled: true
+  Severity: warning
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
   Enabled: true
+  Severity: warning
 
 # Align `when` with `case`.
 Layout/CaseIndentation:
   Enabled: true
+  Severity: warning
 
 # Align comments with method definitions.
 Layout/CommentIndentation:
   Enabled: true
+  Severity: warning
 
 # Multi-line method chaining should be done with leading dots.
 # Layout/DotPosition:
 #   Enabled: true # pending more consensus
+#   Severity: warning
 
 Layout/EmptyLineAfterMagicComment:
   Enabled: true
+  Severity: warning
 
 # No extra empty lines.
 Layout/EmptyLines:
   Enabled: true
+  Severity: warning
 
 # In a regular class definition, no empty lines around the body.
 Layout/EmptyLinesAroundClassBody:
   Enabled: true
+  Severity: warning
 
 # In a regular method definition, no empty lines around the body.
 Layout/EmptyLinesAroundMethodBody:
   Enabled: true
+  Severity: warning
 
 # In a regular module definition, no empty lines around the body.
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
+  Severity: warning
 
 Layout/FirstParameterIndentation:
   Enabled: true
+  Severity: warning
 
 # Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
 Style/HashSyntax:
   Enabled: true
+  Severity: warning
 
 # Method definitions after `private` or `protected` isolated calls need one
 # extra level of indentation.
 Layout/IndentationConsistency:
   Enabled: true
   EnforcedStyle: rails
+  Severity: warning
 
 # Two spaces, no tabs (for indentation).
 Layout/IndentationWidth:
   Enabled: true
+  Severity: warning
 
 Layout/SpaceAfterColon:
   Enabled: true
+  Severity: warning
 
 Layout/SpaceAfterComma:
   Enabled: true
+  Severity: warning
 
 Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: true
+  Severity: warning
 
 Layout/SpaceAroundKeyword:
   Enabled: true
+  Severity: warning
 
 Layout/SpaceAroundOperators:
   Enabled: true
+  Severity: warning
 
 Layout/SpaceBeforeFirstArg:
   Enabled: true
+  Severity: warning
 
 # Defining a method with parameters needs parentheses.
 Style/MethodDefParentheses:
   Enabled: true
+  Severity: warning
 
 # Use `foo {}` not `foo{}`.
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
+  Severity: warning
 
 # Use `foo { bar }` not `foo {bar}`.
 Layout/SpaceInsideBlockBraces:
   Enabled: true
+  Severity: warning
 
 # Use `{ a: 1 }` not `{a:1}`.
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: true
+  Severity: warning
 
 Layout/SpaceInsideParens:
   Enabled: true
+  Severity: warning
 
 # Check quotes usage according to lint rule below.
 # Style/StringLiterals:
 #   Enabled: true # pending more consensus
+#   Severity: warning
 
 # Detect hard tabs, no hard tabs.
 Layout/Tab:
   Enabled: true
+  Severity: warning
 
 # Blank lines should not have any spaces.
 Layout/TrailingBlankLines:
   Enabled: true
+  Severity: warning
 
 # No trailing whitespace.
 Layout/TrailingWhitespace:
   Enabled: true
+  Severity: warning
 
 # Use quotes for string literals when they are enough.
 Style/UnneededPercentQ:
   Enabled: true
+  Severity: warning
 
 Style/StabbyLambdaParentheses:
   Enabled: true
   EnforcedStyle: require_parentheses
+  Severity: warning
 
 Style/SignalException:
   Enabled: true
   EnforcedStyle: only_raise
+  Severity: warning
