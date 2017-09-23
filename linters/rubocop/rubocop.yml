@@ -45,10 +45,10 @@ Metrics/AbcSize:
 #
 # "It's like writing on a roll of toilet paper." - George Riley
 Metrics/LineLength:
-  Enabled: true
-  Max: 100
   AllowHeredoc: true
   AllowURI: true
+  Enabled: true
+  Max: 100
   URISchemes:
     - http
     - https
