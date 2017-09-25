@@ -1,0 +1,6 @@
+version: 1.0
+vertical: Tools
+production:
+  endpoint_url: https://github.com/tedconf/code-style-guides
+staging:
+  endpoint_url:
