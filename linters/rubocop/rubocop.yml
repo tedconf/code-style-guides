@@ -1,7 +1,10 @@
 # Check README.md for usage & style conventions.
 
-# don't check style on generated files.
 AllCops:
+  # we will opt-in to the rules we want.
+  DisabledByDefault: true
+
+  # don't check style on generated files.
   Exclude:
     - 'tmp/**/*'
     - 'db/schema.rb'
@@ -10,6 +13,19 @@ AllCops:
     - 'spec/dummy/bin/*'
     - 'app/models/protobuf/**/*'
 
+# DRY your Gemfile
+Bundler/DuplicatedGem:
+  Enabled: true
+  Severity: warning
+
+# alphabetize your Gemfile.
+# if you like grouping them logically, a comment will be interpreted as the
+# beginning of a new list.
+Bundler/OrderedGems:
+  Enabled: true
+  Severity: warning
+  TreatCommentsAsGroupSeparators: true
+
 # codifying current rubocop defaults
 # establish our own baseline in case the project's defaults are changed
 #
@@ -17,10 +33,9 @@ AllCops:
 # tempted to do the same for cyclomatic complexity, perceived complexity, etc.
 # will hold off on that for now, but PRs/discussion are welcome.
 Metrics/AbcSize:
+  Enabled: true
   Max: 25
   Severity: refactor
-
-
 
 # writing long var names as a way of self-documenting shouldn't be discouraged
 # also allowing URLs & etc so as not to require artifically breaking apart
@@ -28,42 +43,19 @@ Metrics/AbcSize:
 #
 # "It's like writing on a roll of toilet paper." - George Riley
 Metrics/LineLength:
-  Max: 100
   AllowHeredoc: true
   AllowURI: true
+  Enabled: true
+  Max: 100
+  Severity: warning
   URISchemes:
     - http
     - https
 
-
-
 Metrics/MethodLength:
+  Enabled: true
   Max: 25
   Severity: refactor
-
-
-
-# Layout/AlignParameters
-# "Align the parameters of a method call if they span more than one line."
-#
-# 'with_fixed_indentation' means subsequent lines of method arguments should
-# have 1 level of indentation from the method invocation.
-#
-# allowed examples:
-#
-#   server 'beapp-e01.private.ted.com',
-#     user: 'tedconf',
-#     roles: %w(web app)
-#
-#   set :ssh_options,
-#     port: 55423, # rubocop:disable Style/NumericLiterals
-#     forward_agent: true,
-#     proxy: Net::SSH::Proxy::Command.new('ssh gateway-e01.ted.com -p 55423 -W %h:%p')
-#
-Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation
-
-
 
 # expect {
 #   a_thing
@@ -71,26 +63,9 @@ Layout/AlignParameters:
 #
 # is fine.
 Style/BlockDelimiters:
+  Enabled: true
   EnforcedStyle: braces_for_chaining
-
-
-
-# Layout/ClosingParenthesisIndentation
-# "Align ) with ("
-#
-# example:
-#
-#   create(:talkstar_media,
-#     identifier: 'aaa',
-#     talkstar_media_provider_id: non_acme_provider_id
-#   )
-#
-# aligning ')' with '(' in cases like this end up creating unnecessarily long
-# lines, without improving readability all that much (if at all) IMO.
-Layout/ClosingParenthesisIndentation:
-  Enabled: false
-
-
+  Severity: warning
 
 # comments explaining the purpose of a class are a good thing.
 # but they're unecessary in a few cases:
@@ -98,78 +73,11 @@ Layout/ClosingParenthesisIndentation:
 #   - migration classes. the purpose of a migration is obvious.
 #   - classes in a dummy application.
 Style/Documentation:
+  Enabled: true
+  Severity: warning
   Exclude:
     - 'db/migrate/*'
     - 'spec/dummy/**/*'
-
-
-
-# it's ok to do this when it makes the code feel less crowded.
-#
-# example:
-#
-#   class TalksController < ApplicationController
-#
-#     def show
-#       expires_in 10.seconds, public: true
-#       super
-#     end
-#
-#   end
-#
-# according to these cops, those empty lines after `class` and before the final
-# `end` shouldn't be there. they aren't always necessary, of course, but in
-# many cases they improve a person's ability to skim the code quickly.
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
-Layout/EmptyLinesAroundMethodBody:
-  Enabled: false
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: false
-
-
-
-# Either of these are ok
-#
-#   if foo
-#     bar
-#   end
-#
-#   bar if foo
-Style/IfUnlessModifier:
-  Enabled: false
-
-
-
-# "Style/Lambda: Use the lambda method for multi-line lambdas."
-#
-# multi-line lambdas using curly-brace syntax come up in a few places:
-#   - named scopes in models
-#   - config/deploy.rb, which relies heavily on lambdas
-#
-# example:
-#
-#   scope :whatever, -> {
-#     where(foo: 1)
-#   }
-#
-# this is perfectly readable, but is flagged by this cop.
-Style/Lambda:
-  Enabled: false
-
-
-
-# `unless` has always been a cognitive stumbling block for me (alex) & I
-# strongly prefer `! if`.
-#
-# maybe controversial? forgiveness > permission. I can see backing off on this
-# one depending on what the rest of y'all think.
-Style/NegatedIf:
-  Enabled: false
-
-
 
 # Having a lot of code in a block is probably not a great thing.  But in specs,
 # it's actually great, because spec frameworks like RSpec use blocks to define
@@ -182,6 +90,8 @@ Style/NegatedIf:
 # Same goes for routes - those blocks can get pretty long.
 # Borrowed from https://github.com/NobodysNightmare/rubocop/commit/99124543155b728b495560ab9e2a88ff597e1899#diff-e93280b3b31a6438c533a5f3232340d8R1179
 Metrics/BlockLength:
+  Enabled: true
+  Severity: warning
   ExcludedMethods:
     - context
     - describe
@@ -190,3 +100,164 @@ Metrics/BlockLength:
     - shared_examples_for
     - namespace
     - draw
+
+# cribbed from https://github.com/rails/rails/blob/1f7f872ac6c8b57af6e0117bde5f6c38d0bae923/.rubocop.yml
+
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
+  Severity: warning
+
+# Do not use braces for hash literals when they are the last argument of a
+# method call.
+Style/BracesAroundHashParameters:
+  Enabled: true
+  Severity: warning
+
+# Indent private/protected/public as deep as method definitions
+Layout/AccessModifierIndentation:
+  Enabled: true
+  Severity: warning
+
+# Align `when` with `case`.
+Layout/CaseIndentation:
+  Enabled: true
+  Severity: warning
+
+# Align comments with method definitions.
+Layout/CommentIndentation:
+  Enabled: true
+  Severity: warning
+
+# Multi-line method chaining should be done with leading dots.
+# Layout/DotPosition:
+#   Enabled: true # pending more consensus
+#   Severity: warning
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+  Severity: warning
+
+# No extra empty lines.
+Layout/EmptyLines:
+  Enabled: true
+  Severity: warning
+
+# In a regular class definition, no empty lines around the body.
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+  Severity: warning
+
+# In a regular method definition, no empty lines around the body.
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+  Severity: warning
+
+# In a regular module definition, no empty lines around the body.
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+  Severity: warning
+
+Layout/FirstParameterIndentation:
+  Enabled: true
+  Severity: warning
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
+  Severity: warning
+
+# Method definitions after `private` or `protected` isolated calls need one
+# extra level of indentation.
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: rails
+  Severity: warning
+
+# Two spaces, no tabs (for indentation).
+Layout/IndentationWidth:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAfterColon:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAfterComma:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+  Severity: warning
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+  Severity: warning
+
+# Use `foo {}` not `foo{}`.
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+  Severity: warning
+
+# Use `foo { bar }` not `foo {bar}`.
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+  Severity: warning
+
+# Use `{ a: 1 }` not `{a:1}`.
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceInsideParens:
+  Enabled: true
+  Severity: warning
+
+# Check quotes usage according to lint rule below.
+# Style/StringLiterals:
+#   Enabled: true # pending more consensus
+#   Severity: warning
+
+# Detect hard tabs, no hard tabs.
+Layout/Tab:
+  Enabled: true
+  Severity: warning
+
+# Blank lines should not have any spaces.
+Layout/TrailingBlankLines:
+  Enabled: true
+  Severity: warning
+
+# No trailing whitespace.
+Layout/TrailingWhitespace:
+  Enabled: true
+  Severity: warning
+
+# Use quotes for string literals when they are enough.
+Style/UnneededPercentQ:
+  Enabled: true
+  Severity: warning
+
+Style/StabbyLambdaParentheses:
+  Enabled: true
+  EnforcedStyle: require_parentheses
+  Severity: warning
+
+Style/SignalException:
+  Enabled: true
+  EnforcedStyle: only_raise
+  Severity: warning

@@ -1,5 +1,8 @@
 ## Common configuration for rubocop in TED projects
 
+See the [Using Rubocop](../../doc/guides/using_rubocop.html.md) tech guide for
+more details on how this configuration fits into our overall rubocop implementation.
+
 ### Goals
 
 Hold a common base configuration which should apply to all TED ruby projects.
@@ -31,7 +34,6 @@ downloaded to your machine & used. rubocop has some rules about updating the
 local copy when the remote file changes. You can also remove your local version
 (which will be in a `./rubocop-http*` file) to force an update to the latest.
 
-
 **NOTE:** Support for sourcing config from URLs was added in [rubocop 0.35.0](https://github.com/bbatsov/rubocop/releases/tag/v0.35.0)
 In older versions you'll see `No such file or directory @ rb_sysopen` errors
 when starting rubocop.
@@ -45,4 +47,3 @@ when starting rubocop.
   1. Include comments explaining *why* a particular configuration is here.
      Hopefully we'll automate the building of a style guide from these
      someday, so write with that in mind.
-  1. Use 3 blank links between blocks of configuration for readability.
