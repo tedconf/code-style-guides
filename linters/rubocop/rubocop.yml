@@ -3,6 +3,7 @@
 AllCops:
   # we will opt-in to the rules we want.
   DisabledByDefault: true
+  DisplayCopNames: true
 
   # don't check style on generated files.
   Exclude:
