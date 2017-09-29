@@ -3,13 +3,13 @@
 See the [Using Rubocop](../../doc/guides/using_rubocop.html.md) tech guide for
 more details on how this configuration fits into our overall rubocop implementation.
 
-### Goals
+## Goals
 
 Hold a common base configuration which should apply to all TED ruby projects.
 Individual projects may further extend this, but generally the fewer exceptions
 we define the better.
 
-### Usage
+## Usage
 
 in your project's .rubocop.yml:
 
@@ -38,7 +38,7 @@ local copy when the remote file changes. You can also remove your local version
 In older versions you'll see `No such file or directory @ rb_sysopen` errors
 when starting rubocop.
 
-### Conventions in `rubocop.yml`
+## Conventions in `rubocop.yml`
 
   1. Make a branch & open a PR when you want to change something in here.
      Then the git history & closed PRs become documentation about how our
@@ -47,3 +47,9 @@ when starting rubocop.
   1. Include comments explaining *why* a particular configuration is here.
      Hopefully we'll automate the building of a style guide from these
      someday, so write with that in mind.
+
+## Severities
+
+Every cop we enable should have an explicitly-assigned severity. See
+['Understanding violation severities'](https://github.com/tedconf/code-style-guides/blob/master/doc/guides/using_rubocop.html.md#understanding-violation-severities)
+for guidance on which to use when proposing a new cop.
