@@ -13,6 +13,8 @@ AllCops:
     - 'spec/dummy/db/schema.rb'
     - 'spec/dummy/bin/*'
     - 'app/models/protobuf/**/*'
+    - 'node_modules/**/*'
+    - 'bower_components/**/*'
 
 # DRY your Gemfile
 Bundler/DuplicatedGem:
