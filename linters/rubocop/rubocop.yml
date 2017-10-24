@@ -168,6 +168,11 @@ Style/HashSyntax:
   Enabled: true
   Severity: warning
 
+# Indent consistently, who doesn't like that?
+Layout/IndentationConsistency:
+  Enabled: true
+  Severity: warning
+
 # Two spaces, no tabs (for indentation).
 Layout/IndentationWidth:
   Enabled: true
