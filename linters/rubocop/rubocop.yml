@@ -168,13 +168,6 @@ Style/HashSyntax:
   Enabled: true
   Severity: warning
 
-# Method definitions after `private` or `protected` isolated calls need one
-# extra level of indentation.
-Layout/IndentationConsistency:
-  Enabled: true
-  EnforcedStyle: rails
-  Severity: warning
-
 # Two spaces, no tabs (for indentation).
 Layout/IndentationWidth:
   Enabled: true
