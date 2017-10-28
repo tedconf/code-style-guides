@@ -262,3 +262,8 @@ Style/SignalException:
   Enabled: true
   EnforcedStyle: only_raise
   Severity: warning
+
+# point out assignments to unused variables
+Lint/UselessAssignment:
+  Enabled: true
+  Severity: refactor
