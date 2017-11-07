@@ -5,6 +5,11 @@ AllCops:
   DisabledByDefault: true
   DisplayCopNames: true
 
+  # Rubocop caches results per file, to speed up if the file is unchange. If we
+  # don't limit this, it can eat disk space:
+  # https://www.flowdock.com/app/ted/roadrunner/threads/e0sOqMR1lm1jQ7MEQxB4HgyJANM
+  MaxFilesInCache: 30
+
   # don't check style on generated files.
   Exclude:
     - 'tmp/**/*'
