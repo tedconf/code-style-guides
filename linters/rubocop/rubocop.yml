@@ -109,6 +109,7 @@ Metrics/BlockLength:
     - namespace
     - draw
     - define # for FactoryBot
+    - factory # for FactoryBot
 
 # cribbed from https://github.com/rails/rails/blob/1f7f872ac6c8b57af6e0117bde5f6c38d0bae923/.rubocop.yml
 
