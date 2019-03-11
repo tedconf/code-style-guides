@@ -6,13 +6,9 @@ much of this style guide is forked from [the Airbnb JavaScript style guide](http
 
 __While this guide may fall out of date, each project should enforce linting rules to keep you in line with most of their preferences.__
 
-When starting a new project, we recommend using [eslint](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) and one of the following configurations:
-- React: [airbnb's preset](https://www.npmjs.com/package/eslint-config-airbnb) 
+When starting a new project, we recommend using [eslint](https://eslint.org/) [prettier](https://prettier.io/) and one of the following configurations:
+- React/Node: [@tedconf/eslint-config](https://www.npmjs.com/package/@tedconf/eslint-config) 
 - Ember: [Ember suavé](https://github.com/DockYard/eslint-plugin-ember-suave)
-- Other: [airnbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base)
-
-[![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb.svg)](https://www.npmjs.com/package/eslint-config-airbnb)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Other Style Guides
  - [ES5](es5/)
