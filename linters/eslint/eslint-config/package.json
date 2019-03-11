@@ -1,0 +1,9 @@
+{
+  "name": "@tedconf/eslint-config",
+  "version": "0.1.0",
+  "description": "Shared eslint config for TED projects",
+  "main": "index.js",
+  "author": "Matt LaForest<mattl@ted.com>",
+  "license": "MIT",
+  "private": false
+}
