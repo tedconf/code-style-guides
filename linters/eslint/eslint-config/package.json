@@ -5,5 +5,11 @@
   "main": "index.js",
   "author": "Matt LaForest<mattl@ted.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "peerDependencies": {
+    "eslint": ">=5"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1"
+  }
 }
