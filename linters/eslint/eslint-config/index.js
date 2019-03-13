@@ -5,5 +5,13 @@ module.exports = {
     'eslint-config-prettier/babel',
     'eslint-config-prettier/react',
   ].map(require.resolve),
-  rules: {},
+
+  plugins: [
+    'react-hooks',
+  ],
+
+  rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+  },
 };
