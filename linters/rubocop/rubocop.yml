@@ -274,3 +274,8 @@ Style/SignalException:
 Lint/UselessAssignment:
   Enabled: true
   Severity: refactor
+
+# Throw a warning if someone leaves a `byebug` in the code
+Lint/Debugger:
+  Enabled: true
+  Severity: warning
