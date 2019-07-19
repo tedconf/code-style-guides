@@ -4,11 +4,10 @@ module.exports = {
     'eslint-config-prettier',
     'eslint-config-prettier/babel',
     'eslint-config-prettier/react',
+    'plugin:eslint-comments/recommended',
   ].map(require.resolve),
 
-  plugins: [
-    'react-hooks',
-  ],
+  plugins: ['react-hooks'],
 
   rules: {
     'react-hooks/rules-of-hooks': 'error',
