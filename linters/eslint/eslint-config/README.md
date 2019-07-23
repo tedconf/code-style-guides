@@ -33,3 +33,17 @@ Read up on how to use [sharable configs](http://eslint.org/docs/developer-guide/
 ## Philosophy
 
 We want to minimize the bikeshedding and discussion of rules. Our rule set is based of of [airbnb-eslint-config](https://www.npmjs.com/package/eslint-config-airbnb), which is widely used in the community. The basic change to that rule set is to apply eslint-config-prettier afterwards and to let [prettier](https://prettier.io/) handle the formatting.
+
+## Notes
+
+### Non-Prettier variant
+
+In particular, for existing projects already using airbnb's formatting rules an reasonable argument can be made that the history noise converting to prettier is not worth it. With that in mind a ruleset without prettier is also provided and is accessible by:
+
+```json
+{
+  "extends": "@tedconf/eslint-config/no-prettier"
+}
+```
+
+This ruleset is otherwise identical to the default ruleset.
