@@ -168,7 +168,7 @@ Layout/EmptyLinesAroundModuleBody:
   Enabled: true
   Severity: warning
 
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   Enabled: true
   Severity: warning
 
