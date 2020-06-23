@@ -120,12 +120,6 @@ Style/AndOr:
   Enabled: true
   Severity: warning
 
-# Do not use braces for hash literals when they are the last argument of a
-# method call.
-Style/BracesAroundHashParameters:
-  Enabled: true
-  Severity: warning
-
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
   Enabled: true
@@ -170,7 +164,7 @@ Layout/EmptyLinesAroundModuleBody:
   Enabled: true
   Severity: warning
 
-Layout/IndentFirstArgument:
+Layout/FirstArgumentIndentation:
   Enabled: true
   Severity: warning
 
@@ -243,12 +237,12 @@ Layout/SpaceInsideParens:
 #   Severity: warning
 
 # Detect hard tabs, no hard tabs.
-Layout/Tab:
+Layout/IndentationStyle:
   Enabled: true
   Severity: warning
 
 # Blank lines should not have any spaces.
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: true
   Severity: warning
 
