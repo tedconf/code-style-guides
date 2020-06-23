@@ -50,7 +50,7 @@ Metrics/AbcSize:
 # non-code strings. (this is current default already, but let's be explicit.)
 #
 # "It's like writing on a roll of toilet paper." - George Riley
-Metrics/LineLength:
+Layout/LineLength:
   AllowHeredoc: true
   AllowURI: true
   Enabled: true
