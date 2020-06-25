@@ -11,32 +11,25 @@ we define the better.
 
 ## Usage
 
-in your project's .rubocop.yml:
+in your `Gemfile`
+
+```ruby
+group :development, :test do
+  gem 'ted_rubocop_rules'
+end
+```
+
+in your `.rubocop.yml`:
 
 ```yml
-inherit_from:
-  - https://raw.githubusercontent.com/tedconf/code-style-guides/master/linters/rubocop/rubocop.yml
-  - .rubocop_todo.yml # if you have one
+AllCops:
+  TargetRubyVersion: 2.5 # adjust for your project
+
+inherit_gem:
+  ted_rubocop_rules: rubocop.yml
+
+inherit_from: .rubocop_todo.yml # if you have one
 ```
-
-in your project's .gitignore:
-
-```
-.rubocop-http*
-```
-
-This is important because rubocop will fetch our style guide & cache it locally.
-(More info on that below.)
-
-The [rubocop README](https://github.com/bbatsov/rubocop#inheriting-configuration-from-a-remote-url)
-has more details on how the file is sourced & updated. Essentially, it will be
-downloaded to your machine & used. rubocop has some rules about updating the
-local copy when the remote file changes. You can also remove your local version
-(which will be in a `./rubocop-http*` file) to force an update to the latest.
-
-**NOTE:** Support for sourcing config from URLs was added in [rubocop 0.35.0](https://github.com/bbatsov/rubocop/releases/tag/v0.35.0)
-In older versions you'll see `No such file or directory @ rb_sysopen` errors
-when starting rubocop.
 
 ## Conventions in `rubocop.yml`
 

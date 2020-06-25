@@ -15,7 +15,7 @@ As such, our implementation of rubocop (meaning the combination of our rubocop c
 
 ### How to propse changes to the rules
 
-  1. Make an edit to [the style guide](https://github.com/tedconf/code-style-guides/blob/master/linters/rubocop/rubocop.yml), and open a PR.
+  1. Make an edit to [the style guide](https://github.com/tedconf/code-style-guides/blob/master/gem/rubocop.yml), and open a PR.
   2. Always specify a [severity](https://rubocop.readthedocs.io/en/latest/configuration/#severity). `warning` if you think violations should break a build, and `refactor` if not.
 
 ## Setup
@@ -23,32 +23,25 @@ As such, our implementation of rubocop (meaning the combination of our rubocop c
 See [the rubocop README](https://github.com/bbatsov/rubocop) for instructions
 on installing the gem.
 
-After this is done, add the following to your project's .rubocop.yml:
+After this is done, add the following to your project's `Gemfile`
+
+```ruby
+group :development, :test do
+  gem 'ted_rubocop_rules'
+end
+```
+
+Then add this to your `.rubocop.yml`:
 
 ```yml
-inherit_from:
-  - https://raw.githubusercontent.com/tedconf/code-style-guides/master/linters/rubocop/rubocop.yml
-  - .rubocop_todo.yml # if you have one
+AllCops:
+  TargetRubyVersion: 2.5 # adjust for your project
+
+inherit_gem:
+  ted_rubocop_rules: rubocop.yml
+
+inherit_from: .rubocop_todo.yml # if you have one
 ```
-
-And in your project's .gitignore:
-
-```
-.rubocop-http*
-```
-
-This is important because rubocop will fetch our style guide & cache it locally.
-(More info on that below.)
-
-The [rubocop README](https://github.com/bbatsov/rubocop#inheriting-configuration-from-a-remote-url)
-has more details on how the file is sourced & updated. Essentially, it will be
-downloaded to your machine & used. rubocop has some rules about updating the
-local copy when the remote file changes. You can also remove your local version
-(which will be in a `./rubocop-http*` file) to force an update to the latest.
-
-**NOTE:** Support for sourcing config from URLs was added in [rubocop 0.35.0](https://github.com/bbatsov/rubocop/releases/tag/v0.35.0)
-In older versions you'll see `No such file or directory @ rb_sysopen` errors
-when starting rubocop.
 
 ## Using Rubocop While Coding
 
