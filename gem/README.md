@@ -11,6 +11,11 @@ we define the better.
 
 ## Usage
 
+The following instructions describe how to add the gem to a new project. If you
+wish to update an existing project which is currently fetching the TED rule set
+directly from github.com via HTTP, please see [the upgrade guide](UPGRADING.md)
+instead.
+
 in your `Gemfile`
 
 ```ruby
