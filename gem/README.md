@@ -53,6 +53,7 @@ for guidance on which to use when proposing a new cop.
 ## Doing a release
 
   1. Edit [`../linters/rubocop/rubocop.yml`](../linters/rubocop/rubocop.yml).
+  1. Update the CHANGELOG.
   1. Increment [`lib/version.rb`](lib/version.rb).
   1. Push to a branch and open a PR.
   1. Once consensus is reached, merge PR.
