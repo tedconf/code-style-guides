@@ -3,7 +3,8 @@ require "yaml"
 
 task :default => :spec
 
-task :build do
+desc 'copy our shared rubocop.yml into the gem for packaging'
+task :copy_ruleset do
   this_dir = Pathname.new(File.expand_path('../', __FILE__))
 
   source_file = this_dir.join('../linters/rubocop/rubocop.yml')
@@ -24,3 +25,8 @@ task :build do
   # go ahead & copy if everything looks ok.
   `cp #{source_file} #{target_file}`
 end
+
+# copy_ruleset needs to run before the build-in build task
+# otherwise the build task complains that we're trying to package a file (rubocop.yml)
+# which doesn't exist.
+task build: :copy_ruleset
