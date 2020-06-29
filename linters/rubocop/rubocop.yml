@@ -1,1 +1,277 @@
-gem/rubocop.yml
+# Check README.md for usage & style conventions.
+
+AllCops:
+  # we will opt-in to the rules we want.
+  DisabledByDefault: true
+  DisplayCopNames: true
+
+  # Rubocop caches results per file, to speed up if the file is unchange. If we
+  # don't limit this, it can eat disk space:
+  # https://www.flowdock.com/app/ted/roadrunner/threads/e0sOqMR1lm1jQ7MEQxB4HgyJANM
+  MaxFilesInCache: 30
+
+  # don't check style on generated files.
+  Exclude:
+    - 'tmp/**/*'
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'spec/dummy/db/schema.rb'
+    - 'spec/dummy/bin/*'
+    - 'app/models/protobuf/**/*'
+    - 'node_modules/**/*'
+    - 'bower_components/**/*'
+
+# DRY your Gemfile
+Bundler/DuplicatedGem:
+  Enabled: true
+  Severity: warning
+
+# alphabetize your Gemfile.
+# if you like grouping them logically, a comment will be interpreted as the
+# beginning of a new list.
+Bundler/OrderedGems:
+  Enabled: true
+  Severity: warning
+  TreatCommentsAsGroupSeparators: true
+
+# codifying current rubocop defaults
+# establish our own baseline in case the project's defaults are changed
+#
+# flagging this as 'refactor'-level because they're so arbitrary
+# tempted to do the same for cyclomatic complexity, perceived complexity, etc.
+# will hold off on that for now, but PRs/discussion are welcome.
+Metrics/AbcSize:
+  Enabled: true
+  Max: 25
+  Severity: refactor
+
+# writing long var names as a way of self-documenting shouldn't be discouraged
+# also allowing URLs & etc so as not to require artifically breaking apart
+# non-code strings. (this is current default already, but let's be explicit.)
+#
+# "It's like writing on a roll of toilet paper." - George Riley
+Layout/LineLength:
+  AllowHeredoc: true
+  AllowURI: true
+  Enabled: true
+  Max: 100
+  Severity: warning
+  URISchemes:
+    - http
+    - https
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 25
+  Severity: refactor
+
+# expect {
+#   a_thing
+# }.to raise_error
+#
+# is fine.
+Style/BlockDelimiters:
+  Enabled: true
+  EnforcedStyle: braces_for_chaining
+  Severity: warning
+
+# comments explaining the purpose of a class are a good thing.
+# but they're unecessary in a few cases:
+#
+#   - migration classes. the purpose of a migration is obvious.
+#   - classes in a dummy application.
+Style/Documentation:
+  Enabled: true
+  Severity: warning
+  Exclude:
+    - 'db/migrate/*'
+    - 'spec/dummy/**/*'
+
+# Having a lot of code in a block is probably not a great thing.  But in specs,
+# it's actually great, because spec frameworks like RSpec use blocks to define
+# scopes of specs. It seems like specs are not what this rule was aimed at.
+#
+#     RSpec.describe User do
+#       # All your specs go in here.
+#     end
+#
+# Same goes for routes - those blocks can get pretty long.
+# Borrowed from https://github.com/NobodysNightmare/rubocop/commit/99124543155b728b495560ab9e2a88ff597e1899#diff-e93280b3b31a6438c533a5f3232340d8R1179
+Metrics/BlockLength:
+  Enabled: true
+  Severity: warning
+  ExcludedMethods:
+    - context
+    - describe
+    - it
+    - shared_examples
+    - shared_examples_for
+    - namespace
+    - draw
+    - define # for FactoryBot
+    - factory # for FactoryBot
+    - xdescribe
+    - xit
+
+# cribbed from https://github.com/rails/rails/blob/1f7f872ac6c8b57af6e0117bde5f6c38d0bae923/.rubocop.yml
+
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
+  Severity: warning
+
+# Indent private/protected/public as deep as method definitions
+Layout/AccessModifierIndentation:
+  Enabled: true
+  Severity: warning
+
+# Align `when` with `case`.
+Layout/CaseIndentation:
+  Enabled: true
+  Severity: warning
+
+# Align comments with method definitions.
+Layout/CommentIndentation:
+  Enabled: true
+  Severity: warning
+
+# Multi-line method chaining should be done with leading dots.
+# Layout/DotPosition:
+#   Enabled: true # pending more consensus
+#   Severity: warning
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+  Severity: warning
+
+# No extra empty lines.
+Layout/EmptyLines:
+  Enabled: true
+  Severity: warning
+
+# In a regular class definition, no empty lines around the body.
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+  Severity: warning
+
+# In a regular method definition, no empty lines around the body.
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+  Severity: warning
+
+# In a regular module definition, no empty lines around the body.
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+  Severity: warning
+
+Layout/FirstArgumentIndentation:
+  Enabled: true
+  Severity: warning
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
+  Severity: warning
+
+# Indent consistently, who doesn't like that?
+Layout/IndentationConsistency:
+  Enabled: true
+  Severity: warning
+
+# Two spaces, no tabs (for indentation).
+Layout/IndentationWidth:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAfterColon:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAfterComma:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+  Severity: warning
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+  Severity: warning
+
+# Use `foo {}` not `foo{}`.
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+  Severity: warning
+
+# Use `foo { bar }` not `foo {bar}`.
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+  Severity: warning
+
+# Use `{ a: 1 }` not `{a:1}`.
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  Severity: warning
+
+Layout/SpaceInsideParens:
+  Enabled: true
+  Severity: warning
+
+# Check quotes usage according to lint rule below.
+# Style/StringLiterals:
+#   Enabled: true # pending more consensus
+#   Severity: warning
+
+# Detect hard tabs, no hard tabs.
+Layout/IndentationStyle:
+  Enabled: true
+  Severity: warning
+
+# Blank lines should not have any spaces.
+Layout/TrailingEmptyLines:
+  Enabled: true
+  Severity: warning
+
+# No trailing whitespace.
+Layout/TrailingWhitespace:
+  Enabled: true
+  Severity: warning
+
+# Use quotes for string literals when they are enough.
+Style/RedundantPercentQ:
+  Enabled: true
+  Severity: warning
+
+Style/StabbyLambdaParentheses:
+  Enabled: true
+  EnforcedStyle: require_parentheses
+  Severity: warning
+
+Style/SignalException:
+  Enabled: true
+  EnforcedStyle: only_raise
+  Severity: warning
+
+# point out assignments to unused variables
+Lint/UselessAssignment:
+  Enabled: true
+  Severity: refactor
+
+# Throw a warning if someone leaves a `byebug` in the code
+Lint/Debugger:
+  Enabled: true
+  Severity: warning

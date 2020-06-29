@@ -8,6 +8,8 @@ tmp
 node_modules
 bower_components
 
+gem/rubocop.yml
+
 # misc
 /.sass-cache
 /connect.lock

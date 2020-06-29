@@ -1,2 +1,26 @@
 require "bundler/gem_tasks"
+require "yaml"
+
 task :default => :spec
+
+task :build do
+  this_dir = Pathname.new(File.expand_path('../', __FILE__))
+
+  source_file = this_dir.join('../linters/rubocop/rubocop.yml')
+  target_file = this_dir.join('rubocop.yml')
+
+  # be sure syntax is valid.
+  YAML.load_file source_file
+
+  # this will be a nuisance if you're doing repeated builds. sorry 'bout that.
+  #
+  # goal is to prevent people from inadvertently editing gem/rubocop.yml and
+  # having those edits wiped out by the build process. (a mistake which they
+  # might not notice until much later.)
+  if File.exist?(target_file)
+    raise "Please remove #{target_file} before building. Make any edits in #{source_file} instead."
+  end
+
+  # go ahead & copy if everything looks ok.
+  `cp #{source_file} #{target_file}`
+end
