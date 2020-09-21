@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   # Specify which files should be added to the gem when it is released.
   spec.files         = ["rubocop.yml", "lib/ted_rubocop_rules/version.rb"]
 
-  spec.add_dependency "rubocop", "= 0.86.0"
+  spec.add_dependency "rubocop", "= 0.91.0"
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 13.0"
 end
